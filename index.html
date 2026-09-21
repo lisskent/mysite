@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071018">
+  <meta name="description" content="Мой мир — личный dashboard Дэна: цели, финансы, работа, игры, техника и планы.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <title>Мой мир · Дэн</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-cat">⌁</span><span>Мой мир</span></div>
+      <nav id="sideNav" class="side-nav" aria-label="Основная навигация">
+        <button class="nav-item active" data-section="home"><span>⌂</span>Главная</button>
+        <button class="nav-item" data-section="about"><span>♙</span>О себе</button>
+        <button class="nav-item" data-section="goals"><span>◎</span>Цели</button>
+        <button class="nav-item" data-section="finance"><span>₽</span>Финансы</button>
+        <button class="nav-item" data-section="work"><span>▣</span>Работа</button>
+        <button class="nav-item" data-section="calendar"><span>□</span>Календарь</button>
+        <button class="nav-item" data-section="games"><span>⌁</span>Игры</button>
+        <button class="nav-item" data-section="tech"><span>▤</span>Техника</button>
+        <button class="nav-item" data-section="health"><span>♡</span>Здоровье</button>
+        <button class="nav-item" data-section="notes"><span>▤</span>Заметки</button>
+      </nav>
+      <button class="theme-btn" id="themeToggle" title="Переключить тему">☾ <span>Тема</span></button>
+      <div class="side-footer">v1.0 · GitHub Pages</div>
+    </aside>
+
+    <main class="main">
+      <header class="mobile-header">
+        <div class="brand"><span class="brand-cat">⌁</span>Мой мир</div>
+        <button class="icon-btn" id="mobileTheme" aria-label="Переключить тему">☾</button>
+      </header>
+
+      <section id="home" class="section active-section">
+        <div class="hero">
+          <div class="hero-image"></div>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="eyebrow">Привет, Дэн</div>
+            <h1>Я рад, что ты здесь <span class="tiny-cat">⌁</span></h1>
+            <p>Это мой личный угол в интернете. Здесь мои цели, планы, работа, интересы и всё, что делает меня мной.</p>
+            <div class="hero-sign">Всё получится. ♡</div>
+          </div>
+          <div class="clock"><strong id="clock">12:42</strong><span id="date">21 сентября 2026</span></div>
+        </div>
+
+        <div class="grid grid-top">
+          <article class="card goals-card">
+            <div class="card-head"><h2>◎ Мои цели</h2><button class="text-btn" data-section-jump="goals">Все цели →</button></div>
+            <div id="goalPreview" class="goal-list"></div>
+          </article>
+
+          <article class="card today-card">
+            <div class="card-head"><h2>□ Сегодня</h2><span class="muted" id="todayLabel"></span></div>
+            <div id="todayList" class="today-list"></div>
+            <div class="card-note">Маленькие шаги тоже ведут к большим целям ♡</div>
+          </article>
+
+          <article class="quote-card">
+            <div>Лучше делать и жалеть,<br>чем не делать<br>и жалеть.</div>
+            <span>♡</span>
+          </article>
+        </div>
+
+        <div class="grid grid-three">
+          <article class="card finance-card">
+            <div class="card-head"><h2>▱ Финансы</h2><button class="text-btn" data-section-jump="finance">Подробнее →</button></div>
+            <div class="money" id="balancePreview">48 320 ₽</div>
+            <div class="muted">Общий баланс</div>
+            <div class="finance-row"><span>Сегодня</span><b class="positive" id="incomePreview">+ 3 250 ₽</b></div>
+            <div class="finance-row"><span>Расходы</span><b class="negative" id="expensePreview">− 820 ₽</b></div>
+            <div class="sparkline"><span style="height:30%"></span><span style="height:44%"></span><span style="height:42%"></span><span style="height:61%"></span><span style="height:58%"></span><span style="height:76%"></span><span style="height:72%"></span><span style="height:86%"></span></div>
+            <div class="goal-fin"><span>Цель на месяц</span><b>68 000 ₽ / 100 000 ₽</b></div>
+            <div class="progress"><i style="width:68%"></i></div>
+          </article>
+
+          <article class="card work-card">
+            <div class="card-head"><h2>▣ Работа</h2><button class="text-btn" data-section-jump="work">Подробнее →</button></div>
+            <h3>Кофейня ETLON</h3>
+            <p><span>Ставка:</span> 250 ₽/ч + 3% от выручки</p>
+            <p><span>График:</span> 14:00 будни / 13:00 выходные</p>
+            <p><span>Усиление:</span> 300 ₽/ч (по желанию)</p>
+            <button class="outline-btn" data-section-jump="calendar">□ Открыть календарь</button>
+          </article>
+
+          <article class="card tech-card">
+            <div class="card-head"><h2>⌁ ПК и игры</h2><button class="text-btn" data-section-jump="tech">Подробнее →</button></div>
+            <ul class="specs"><li>Ryzen 5 5600</li><li>Gigabyte A520M K V2</li><li>32 GB DDR4 3200</li><li>RX 5700</li><li>2 × SSD 500 GB</li></ul>
+            <div class="game-chips"><span>PoE 2</span><span>Elden Ring</span><span>Palworld</span><span>Endfield</span></div>
+          </article>
+        </div>
+
+        <div class="grid grid-three">
+          <article class="card health-card"><div class="card-head"><h2>♡ Здоровье</h2><button class="text-btn" data-section-jump="health">Подробнее →</button></div><div class="health-title">План на 3 дня / неделю</div><div class="muted">Базовый уровень · 68 кг</div><div class="progress"><i style="width:33%"></i></div><div class="health-tags"><span>Руки</span><span>Спина</span><span>Пресс</span><span>Грудь</span></div></article>
+          <article class="card pet-card"><div class="card-head"><h2>♧ Питомцы</h2><button class="text-btn" data-section-jump="about">Подробнее →</button></div><div class="pet-image"></div><p>Маленькие радости в большом мире ♡</p></article>
+          <article class="card plans-card"><div class="card-head"><h2>↻ Ближайшие планы</h2><button class="text-btn" data-section-jump="goals">→</button></div><label><input type="checkbox"> Купить новый ноутбук (до 130к)</label><label><input type="checkbox"> Сделать VPN для Windows</label><label><input type="checkbox"> Разобраться с iPhone / tethering</label><label><input type="checkbox"> Приготовить ягодный напиток</label><label><input type="checkbox"> Путешествие</label></article>
+        </div>
+      </section>
+
+      <section id="about" class="section"><div class="page-title"><span>О себе</span><h2>Немного меня</h2><p>Личная страница без корпоративного «мы — команда единомышленников». Просто человек, кофе и слишком много идей.</p></div><div class="about-grid"><article class="card profile-card"><div class="avatar">Д</div><h3>Дэн</h3><p>Бариста · любитель кофе · создатель маленьких приложений · человек, который периодически решает починить вообще всё.</p><div class="tag-row"><span>☕ Кофе</span><span>💻 Код</span><span>🎮 Игры</span><span>📱 iPhone</span></div></article><article class="card"><h3>Что здесь важно</h3><ul class="clean-list"><li>Делать вещи удобнее, а не просто красивее.</li><li>Собирать идеи в работающие проекты.</li><li>Следить за деньгами без табличного шаманства.</li><li>Оставлять место для отдыха, игр и странных идей.</li></ul></article></div></section>
+
+      <section id="goals" class="section"><div class="page-title"><span>Цели</span><h2>Двигаться, а не просто планировать</h2><p>Прогресс сохраняется в браузере. Человечество наконец-то изобрело чекбокс.</p></div><div id="goalsPage" class="goal-page-grid"></div><form id="goalForm" class="card form-card"><h3>Добавить цель</h3><div class="form-row"><input id="goalName" required placeholder="Например, собрать новый ПК"><input id="goalProgress" type="number" min="0" max="100" value="0" placeholder="%"><button class="primary-btn">Добавить</button></div></form></section>
+
+      <section id="finance" class="section"><div class="page-title"><span>Финансы</span><h2>Деньги любят порядок</h2><p>Локальный демо-учёт. Никаких банковских интеграций, поэтому деньги не исчезнут из-за какого-нибудь API.</p></div><div class="finance-dashboard"><article class="card big-balance"><span class="muted">Баланс</span><strong id="financeBalance">48 320 ₽</strong><div class="mini-stats"><span>Доход <b class="positive">+3 250 ₽</b></span><span>Расход <b class="negative">−820 ₽</b></span></div></article><article class="card"><h3>Добавить операцию</h3><form id="financeForm"><div class="toggle"><button type="button" class="active" data-type="income">+ Доход</button><button type="button" data-type="expense">− Расход</button></div><input id="financeAmount" type="number" min="1" required placeholder="Сумма"><input id="financeTitle" required placeholder="Название"><button class="primary-btn">Сохранить</button></form></article></div><div class="card operations"><div class="card-head"><h3>Последние операции</h3><span class="muted">до 10</span></div><div id="operationsList"></div></div></section>
+
+      <section id="work" class="section"><div class="page-title"><span>Работа</span><h2>ETLON</h2><p>Рабочие ставки и расчёты, собранные в одном месте.</p></div><div class="work-stats"><article class="card stat"><span>Основа</span><strong>250 ₽/ч</strong></article><article class="card stat"><span>Процент</span><strong>3%</strong></article><article class="card stat"><span>Усиление</span><strong>300 ₽/ч</strong></article><article class="card stat"><span>Подмога</span><strong>300 ₽/ч</strong></article></div><article class="card work-details"><h3>Как считается день</h3><p><b>Основа:</b> рабочие часы × 250 ₽ + 3% от выручки.</p><p><b>Усиление:</b> часы × 300 ₽.</p><p><b>Подмога:</b> отдельные часы по ставке 300 ₽.</p><p class="muted">Конкретные значения можно позже связать с календарём и полноценным финансовым модулем.</p></article></section>
+
+      <section id="calendar" class="section"><div class="page-title"><span>Календарь</span><h2>План месяца</h2><p>Нажимай на день, чтобы отметить работу или просто посмотреть заметку.</p></div><div class="card calendar-card"><div class="calendar-head"><button id="prevMonth" class="icon-btn">‹</button><h3 id="monthTitle"></h3><button id="nextMonth" class="icon-btn">›</button></div><div class="weekdays"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div><div id="calendarGrid" class="calendar-grid"></div></div></section>
+
+      <section id="games" class="section"><div class="page-title"><span>Игры</span><h2>Место для цифровой прокрастинации</h2><p>Потому что отдых тоже требует отдельной вкладки.</p></div><div class="game-grid"><article class="card game-card"><b>Path of Exile 2</b><span>Основная ARPG</span><div class="game-status">DX12 · 60 FPS в hideout</div></article><article class="card game-card"><b>Elden Ring</b><span>Когда хочется страдать красиво</span><div class="game-status">В планах</div></article><article class="card game-card"><b>Palworld</b><span>Коллекционирование существ</span><div class="game-status">Периодически</div></article><article class="card game-card"><b>Arknights: Endfield</b><span>Новая штука, которую надо попробовать</span><div class="game-status">В списке</div></article><article class="card game-card"><b>Genshin Impact</b><span>Иногда</span><div class="game-status">В списке</div></article><article class="card game-card"><b>Hive Colony</b><span>Тестируем, чиним, снова тестируем</span><div class="game-status">В списке</div></article></div></section>
+
+      <section id="tech" class="section"><div class="page-title"><span>Техника</span><h2>Железо и гаджеты</h2><p>Потому что любая проблема становится немного интереснее, если добавить температуры и драйверы.</p></div><div class="spec-grid"><article class="card"><h3>ПК</h3><ul class="clean-list"><li>Ryzen 5 5600</li><li>Gigabyte A520M K V2</li><li>32 GB Kingston Fury Beast DDR4-3200</li><li>MSI Radeon RX 5700</li><li>Cougar XTC 600</li><li>2 × SSD 500 GB</li></ul></article><article class="card"><h3>Периферия</h3><ul class="clean-list"><li>2 × монитор 144 Hz</li><li>Logitech G Pro X 2 Lightspeed</li><li>IO Type 68 Pro Wireless</li><li>iPhone 14 Plus</li></ul></article></div></section>
+
+      <section id="health" class="section"><div class="page-title"><span>Здоровье</span><h2>Тренировки</h2><p>Простой домашний план без оборудования.</p></div><div class="workout-grid"><article class="card"><h3>День A · Руки + грудь</h3><ol><li>Отжимания · 3 × 8–12</li><li>Узкие отжимания · 3 × 6–10</li><li>Планка · 3 × 30–45 сек</li></ol></article><article class="card"><h3>День B · Спина + пресс</h3><ol><li>Лодочка · 3 × 12</li><li>Супермен · 3 × 10</li><li>Скручивания · 3 × 12–15</li></ol></article><article class="card"><h3>День C · Всё тело</h3><ol><li>Приседания · 3 × 12–15</li><li>Отжимания · 3 × 8–12</li><li>Планка · 3 × 45 сек</li></ol></article></div></section>
+
+      <section id="notes" class="section"><div class="page-title"><span>Заметки</span><h2>Идеи, которые нельзя потерять</h2><p>Сохраняются локально. Браузер теперь ещё и блокнот, человечество не остановить.</p></div><div class="notes-wrap card"><textarea id="notesArea" placeholder="Запиши сюда идею, рецепт, мысль или план..."></textarea><div class="notes-foot"><span id="saveState">Сохранено локально</span><button class="primary-btn" id="clearNotes">Очистить</button></div></div></section>
+
+      <footer>Мой мир · Сделано для себя, а не для инвесторов. <span>♡</span></footer>
+    </main>
+  </div>
+  <nav class="bottom-nav" id="bottomNav"><button class="active" data-section="home">⌂<small>Главная</small></button><button data-section="goals">◎<small>Цели</small></button><button data-section="finance">₽<small>Финансы</small></button><button data-section="calendar">□<small>Календарь</small></button><button data-section="notes">▤<small>Заметки</small></button></nav>
+  <script src="app.js"></script>
+</body>
+</html>

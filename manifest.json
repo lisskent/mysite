@@ -1,0 +1,10 @@
+{
+  "name":"Мой мир · Дэн",
+  "short_name":"Мой мир",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#050a0f",
+  "theme_color":"#071018",
+  "lang":"ru",
+  "icons":[{"src":"assets/favicon.svg","sizes":"any","type":"image/svg+xml"}]
+}
